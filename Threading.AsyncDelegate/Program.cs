@@ -16,7 +16,7 @@ namespace Threading.AsyncDelegate
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ThreadForm());
+            Application.Run(new ConcurencyThreadForm());
         }
     }
 }

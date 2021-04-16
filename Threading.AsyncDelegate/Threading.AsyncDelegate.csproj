@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConcurencyThreadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConcurencyThreadForm.Designer.cs">
+      <DependentUpon>ConcurencyThreadForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,9 @@
     <Compile Include="ThreadForm.Designer.cs">
       <DependentUpon>ThreadForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ConcurencyThreadForm.resx">
+      <DependentUpon>ConcurencyThreadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
