@@ -8,3 +8,4 @@ C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.Asy
 C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.AsyncDelegate.csproj.CoreCompileInputs.cache
 C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.AsyncDelegate.exe
 C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.AsyncDelegate.pdb
+C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.AsyncDelegate.ThreadForm.resources

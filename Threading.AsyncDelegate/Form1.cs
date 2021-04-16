@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Runtime.Remoting.Messaging;
 using System.Threading;
 using System.Windows.Forms;
 
 namespace Threading.AsyncDelegate
 {
     public delegate void ProcessDataListDelegate();
+    public delegate int SumOfNumbersDelegate(int[] numbers);
     public partial class Form1 : Form
     {
         private bool abortThread;
@@ -79,6 +81,41 @@ namespace Threading.AsyncDelegate
             btnStopSecondProcess.Enabled = false;
             secondAbortThread = true;
             txtSeondProcessDataList.Clear();
+        }
+
+
+        private int SumOfNumbers(int[] numbers)
+        {
+            int sum = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                sum += numbers[i];
+                if (txtProcessList.InvokeRequired)
+                    Invoke(new Action(() => txtSumNumbersList.Text += $"number {i + 1}: {numbers[i]} and sum of numbers: {sum}{Environment.NewLine}"));
+                else
+                    Invoke(new Action(() => txtSumNumbersList.Text += $"number {i + 1}: {numbers[i]} and sum of numbers: {sum}{Environment.NewLine}"));
+                Thread.Sleep(500);
+            }
+
+            Invoke(new Action(() => txtSumNumbersList.Text += $"The Sum of the numbers: {sum}"));
+            return sum;
+        }
+
+        private void btnSum_Click(object sender, EventArgs e)
+        {
+            int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            SumOfNumbersDelegate sumOfNumbersDelegate = new SumOfNumbersDelegate(SumOfNumbers);
+            IAsyncResult result = sumOfNumbersDelegate.BeginInvoke(numbers, CallBackMethod, "The Sum of numbers :");
+        }
+
+        private void CallBackMethod(IAsyncResult asyncResult)
+        {
+            AsyncResult result = (AsyncResult)asyncResult;
+            SumOfNumbersDelegate asyncDelegate = (SumOfNumbersDelegate)result.AsyncDelegate;
+            string formatString = (string)asyncResult.AsyncState;
+
+            int sum = asyncDelegate.EndInvoke(asyncResult);
+            MessageBox.Show($"{formatString} {sum}");
         }
     }
 }

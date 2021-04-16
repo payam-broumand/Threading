@@ -34,6 +34,8 @@
             this.btnStartSecondProcess = new System.Windows.Forms.Button();
             this.btnStopSecondProcess = new System.Windows.Forms.Button();
             this.txtSeondProcessDataList = new System.Windows.Forms.TextBox();
+            this.txtSumNumbersList = new System.Windows.Forms.TextBox();
+            this.btnSum = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tnStartProcess
@@ -94,16 +96,37 @@
             this.txtSeondProcessDataList.Size = new System.Drawing.Size(254, 383);
             this.txtSeondProcessDataList.TabIndex = 1;
             // 
+            // txtSumNumbersList
+            // 
+            this.txtSumNumbersList.Location = new System.Drawing.Point(563, 55);
+            this.txtSumNumbersList.Multiline = true;
+            this.txtSumNumbersList.Name = "txtSumNumbersList";
+            this.txtSumNumbersList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtSumNumbersList.Size = new System.Drawing.Size(254, 383);
+            this.txtSumNumbersList.TabIndex = 1;
+            // 
+            // btnSum
+            // 
+            this.btnSum.Location = new System.Drawing.Point(563, 12);
+            this.btnSum.Name = "btnSum";
+            this.btnSum.Size = new System.Drawing.Size(101, 37);
+            this.btnSum.TabIndex = 0;
+            this.btnSum.Text = "Sum of Numbers";
+            this.btnSum.UseVisualStyleBackColor = true;
+            this.btnSum.Click += new System.EventHandler(this.btnSum_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 450);
+            this.ClientSize = new System.Drawing.Size(870, 450);
+            this.Controls.Add(this.txtSumNumbersList);
             this.Controls.Add(this.txtSeondProcessDataList);
             this.Controls.Add(this.txtProcessList);
             this.Controls.Add(this.btnStopSecondProcess);
             this.Controls.Add(this.btnEndProcess);
             this.Controls.Add(this.btnStartSecondProcess);
+            this.Controls.Add(this.btnSum);
             this.Controls.Add(this.tnStartProcess);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -121,6 +144,8 @@
         private System.Windows.Forms.Button btnStartSecondProcess;
         private System.Windows.Forms.Button btnStopSecondProcess;
         private System.Windows.Forms.TextBox txtSeondProcessDataList;
+        private System.Windows.Forms.TextBox txtSumNumbersList;
+        private System.Windows.Forms.Button btnSum;
     }
 }
 
