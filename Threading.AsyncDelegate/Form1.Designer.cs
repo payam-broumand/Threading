@@ -28,13 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.tnStartProcess = new System.Windows.Forms.Button();
+            this.btnEndProcess = new System.Windows.Forms.Button();
+            this.txtProcessList = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // tnStartProcess
+            // 
+            this.tnStartProcess.Location = new System.Drawing.Point(12, 12);
+            this.tnStartProcess.Name = "tnStartProcess";
+            this.tnStartProcess.Size = new System.Drawing.Size(101, 37);
+            this.tnStartProcess.TabIndex = 0;
+            this.tnStartProcess.Text = "Start Process";
+            this.tnStartProcess.UseVisualStyleBackColor = true;
+            // 
+            // btnEndProcess
+            // 
+            this.btnEndProcess.Location = new System.Drawing.Point(119, 12);
+            this.btnEndProcess.Name = "btnEndProcess";
+            this.btnEndProcess.Size = new System.Drawing.Size(101, 37);
+            this.btnEndProcess.TabIndex = 0;
+            this.btnEndProcess.Text = "End Process";
+            this.btnEndProcess.UseVisualStyleBackColor = true;
+            // 
+            // txtProcessList
+            // 
+            this.txtProcessList.Location = new System.Drawing.Point(12, 55);
+            this.txtProcessList.Multiline = true;
+            this.txtProcessList.Name = "txtProcessList";
+            this.txtProcessList.Size = new System.Drawing.Size(254, 383);
+            this.txtProcessList.TabIndex = 1;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(451, 450);
+            this.Controls.Add(this.txtProcessList);
+            this.Controls.Add(this.btnEndProcess);
+            this.Controls.Add(this.tnStartProcess);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button tnStartProcess;
+        private System.Windows.Forms.Button btnEndProcess;
+        private System.Windows.Forms.TextBox txtProcessList;
     }
 }
 
