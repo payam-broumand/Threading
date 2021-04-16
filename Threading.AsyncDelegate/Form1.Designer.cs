@@ -51,6 +51,7 @@
             this.btnEndProcess.TabIndex = 0;
             this.btnEndProcess.Text = "Stop Process";
             this.btnEndProcess.UseVisualStyleBackColor = true;
+            this.btnEndProcess.Click += new System.EventHandler(this.btnEndProcess_Click);
             // 
             // txtProcessList
             // 
