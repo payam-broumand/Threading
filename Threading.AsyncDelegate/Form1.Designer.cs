@@ -31,6 +31,9 @@
             this.tnStartProcess = new System.Windows.Forms.Button();
             this.btnEndProcess = new System.Windows.Forms.Button();
             this.txtProcessList = new System.Windows.Forms.TextBox();
+            this.btnStartSecondProcess = new System.Windows.Forms.Button();
+            this.btnStopSecondProcess = new System.Windows.Forms.Button();
+            this.txtSeondProcessDataList = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tnStartProcess
@@ -62,13 +65,45 @@
             this.txtProcessList.Size = new System.Drawing.Size(254, 383);
             this.txtProcessList.TabIndex = 1;
             // 
+            // btnStartSecondProcess
+            // 
+            this.btnStartSecondProcess.Location = new System.Drawing.Point(286, 12);
+            this.btnStartSecondProcess.Name = "btnStartSecondProcess";
+            this.btnStartSecondProcess.Size = new System.Drawing.Size(101, 37);
+            this.btnStartSecondProcess.TabIndex = 0;
+            this.btnStartSecondProcess.Text = "Start Second Process";
+            this.btnStartSecondProcess.UseVisualStyleBackColor = true;
+            this.btnStartSecondProcess.Click += new System.EventHandler(this.btnStartSecondProcess_Click);
+            // 
+            // btnStopSecondProcess
+            // 
+            this.btnStopSecondProcess.Location = new System.Drawing.Point(393, 12);
+            this.btnStopSecondProcess.Name = "btnStopSecondProcess";
+            this.btnStopSecondProcess.Size = new System.Drawing.Size(101, 37);
+            this.btnStopSecondProcess.TabIndex = 0;
+            this.btnStopSecondProcess.Text = "Stop Second Process";
+            this.btnStopSecondProcess.UseVisualStyleBackColor = true;
+            this.btnStopSecondProcess.Click += new System.EventHandler(this.btnStopSecondProcess_Click);
+            // 
+            // txtSeondProcessDataList
+            // 
+            this.txtSeondProcessDataList.Location = new System.Drawing.Point(286, 55);
+            this.txtSeondProcessDataList.Multiline = true;
+            this.txtSeondProcessDataList.Name = "txtSeondProcessDataList";
+            this.txtSeondProcessDataList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtSeondProcessDataList.Size = new System.Drawing.Size(254, 383);
+            this.txtSeondProcessDataList.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 450);
+            this.ClientSize = new System.Drawing.Size(552, 450);
+            this.Controls.Add(this.txtSeondProcessDataList);
             this.Controls.Add(this.txtProcessList);
+            this.Controls.Add(this.btnStopSecondProcess);
             this.Controls.Add(this.btnEndProcess);
+            this.Controls.Add(this.btnStartSecondProcess);
             this.Controls.Add(this.tnStartProcess);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -83,6 +118,9 @@
         private System.Windows.Forms.Button tnStartProcess;
         private System.Windows.Forms.Button btnEndProcess;
         private System.Windows.Forms.TextBox txtProcessList;
+        private System.Windows.Forms.Button btnStartSecondProcess;
+        private System.Windows.Forms.Button btnStopSecondProcess;
+        private System.Windows.Forms.TextBox txtSeondProcessDataList;
     }
 }
 
