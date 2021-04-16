@@ -1,0 +1,10 @@
+C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\bin\Debug\Threading.AsyncDelegate.exe.config
+C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\bin\Debug\Threading.AsyncDelegate.exe
+C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\bin\Debug\Threading.AsyncDelegate.pdb
+C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.AsyncDelegate.csprojAssemblyReference.cache
+C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.AsyncDelegate.Form1.resources
+C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.AsyncDelegate.Properties.Resources.resources
+C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.AsyncDelegate.csproj.GenerateResource.cache
+C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.AsyncDelegate.csproj.CoreCompileInputs.cache
+C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.AsyncDelegate.exe
+C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.AsyncDelegate.pdb

@@ -41,6 +41,7 @@
             this.tnStartProcess.TabIndex = 0;
             this.tnStartProcess.Text = "Start Process";
             this.tnStartProcess.UseVisualStyleBackColor = true;
+            this.tnStartProcess.Click += new System.EventHandler(this.tnStartProcess_Click);
             // 
             // btnEndProcess
             // 
@@ -48,7 +49,7 @@
             this.btnEndProcess.Name = "btnEndProcess";
             this.btnEndProcess.Size = new System.Drawing.Size(101, 37);
             this.btnEndProcess.TabIndex = 0;
-            this.btnEndProcess.Text = "End Process";
+            this.btnEndProcess.Text = "Stop Process";
             this.btnEndProcess.UseVisualStyleBackColor = true;
             // 
             // txtProcessList
@@ -56,6 +57,7 @@
             this.txtProcessList.Location = new System.Drawing.Point(12, 55);
             this.txtProcessList.Multiline = true;
             this.txtProcessList.Name = "txtProcessList";
+            this.txtProcessList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtProcessList.Size = new System.Drawing.Size(254, 383);
             this.txtProcessList.TabIndex = 1;
             // 
@@ -68,6 +70,7 @@
             this.Controls.Add(this.btnEndProcess);
             this.Controls.Add(this.tnStartProcess);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
