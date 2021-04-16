@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Threading.AsyncDelegate
 {
     public partial class ConcurencyThreadForm : Form
     {
+        AutoResetEvent resetEvent = new AutoResetEvent(false);
         private bool abortSecondThread;
         public ConcurencyThreadForm()
         {
@@ -23,23 +17,54 @@ namespace Threading.AsyncDelegate
         private void btnStartProcess_Click(object sender, EventArgs e)
         {
             abortSecondThread = false;
-            Thread secondThread = new Thread(new ThreadStart(ProcessData));
-            secondThread.Start();
-            txtProcessList.Text = "All is done." + Environment.NewLine;
+            Thread thread = new Thread(DoWork);
+            thread.Name = "Do Work Thread";
+            thread.Start();
         }
 
-        private void ProcessData()
+        private void DoWork()
         {
-            for (int i = 0; i < 1000; i++)
+            string threadName = Thread.CurrentThread.Name;
+            Invoke(new Action(() => txtProcessList.Text += $"{threadName} is started {Environment.NewLine}"));
+            Thread thread = new Thread(new ParameterizedThreadStart(ProcessData));
+            thread.Name = "Process Data Thread";
+            thread.Start(new Boundery(1, 10));
+
+            resetEvent.WaitOne();
+            Invoke(new Action(() => txtProcessList.Text += "ALL PROCESS IS DONE" + Environment.NewLine));
+        }
+
+        private void ProcessData(object data)
+        {
+            string threadName = Thread.CurrentThread.Name;
+            Invoke(new Action(() => txtProcessList.Text += $"{threadName} is running{Environment.NewLine}"));
+            if (data is Boundery boundery)
             {
-                Invoke(new Action(() => UpdateTextBox(i, txtProcessList)));
-                Thread.Sleep(500);
+                for (int i = boundery.From; i <= boundery.To; i++)
+                {
+                    if (abortSecondThread) Thread.CurrentThread.Abort();
+                    Invoke(new Action(() => UpdateTextBox(i, txtProcessList)));
+                    Thread.Sleep(500);
+                }
+                resetEvent.Set();
             }
         }
 
         private void UpdateTextBox(int processId, TextBox textBox)
         {
             textBox.Text += $"Process {processId} is done.{Environment.NewLine}";
+        }
+    }
+
+    public class Boundery
+    {
+        public int From { get; set; }
+        public int To { get; set; }
+
+        public Boundery(int from, int to)
+        {
+            this.From = from;
+            this.To = to;
         }
     }
 }
