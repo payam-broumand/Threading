@@ -41,5 +41,26 @@ namespace Threading.AsyncDelegate
 
             MessageBox.Show("Average of numbers: " + (sum / numbers.Count()));
         }
+
+        private int CalculateSumOfNumbers()
+        {
+            var numbers = Enumerable.Repeat(20, 120000000);
+            int sum = 0;
+            Parallel.ForEach(numbers, number =>
+            {
+                sum += number;
+            });
+
+            int average = sum / numbers.Count();
+            return average;
+        }
+
+        private void btnResuturnTask_Click(object sender, EventArgs e)
+        {
+            Task<int> task = new Task<int>(CalculateSumOfNumbers);
+            task.Start();
+            var average = task.Result;
+            MessageBox.Show($"Average of numbers : {task.Result}");
+        }
     }
 }

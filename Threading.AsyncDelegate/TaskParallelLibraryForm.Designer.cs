@@ -31,6 +31,9 @@
             this.txtTaskNumbers = new System.Windows.Forms.TextBox();
             this.btnStartTask = new System.Windows.Forms.Button();
             this.btnStopTask = new System.Windows.Forms.Button();
+            this.btnResuturnTask = new System.Windows.Forms.Button();
+            this.txtSumOfNumbersList = new System.Windows.Forms.TextBox();
+            this.btnCancelTask = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtTaskNumbers
@@ -61,13 +64,44 @@
             this.btnStopTask.Text = "Stop Task";
             this.btnStopTask.UseVisualStyleBackColor = true;
             // 
+            // btnResuturnTask
+            // 
+            this.btnResuturnTask.Location = new System.Drawing.Point(398, 12);
+            this.btnResuturnTask.Name = "btnResuturnTask";
+            this.btnResuturnTask.Size = new System.Drawing.Size(110, 30);
+            this.btnResuturnTask.TabIndex = 5;
+            this.btnResuturnTask.Text = "Start Return Task";
+            this.btnResuturnTask.UseVisualStyleBackColor = true;
+            this.btnResuturnTask.Click += new System.EventHandler(this.btnResuturnTask_Click);
+            // 
+            // txtSumOfNumbersList
+            // 
+            this.txtSumOfNumbersList.Location = new System.Drawing.Point(398, 48);
+            this.txtSumOfNumbersList.Multiline = true;
+            this.txtSumOfNumbersList.Name = "txtSumOfNumbersList";
+            this.txtSumOfNumbersList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtSumOfNumbersList.Size = new System.Drawing.Size(361, 390);
+            this.txtSumOfNumbersList.TabIndex = 6;
+            // 
+            // btnCancelTask
+            // 
+            this.btnCancelTask.Location = new System.Drawing.Point(514, 12);
+            this.btnCancelTask.Name = "btnCancelTask";
+            this.btnCancelTask.Size = new System.Drawing.Size(108, 30);
+            this.btnCancelTask.TabIndex = 5;
+            this.btnCancelTask.Text = "Stop Task";
+            this.btnCancelTask.UseVisualStyleBackColor = true;
+            // 
             // TaskParallelLibraryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtSumOfNumbersList);
             this.Controls.Add(this.txtTaskNumbers);
+            this.Controls.Add(this.btnCancelTask);
             this.Controls.Add(this.btnStopTask);
+            this.Controls.Add(this.btnResuturnTask);
             this.Controls.Add(this.btnStartTask);
             this.Name = "TaskParallelLibraryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -82,5 +116,8 @@
         private System.Windows.Forms.TextBox txtTaskNumbers;
         private System.Windows.Forms.Button btnStartTask;
         private System.Windows.Forms.Button btnStopTask;
+        private System.Windows.Forms.Button btnResuturnTask;
+        private System.Windows.Forms.TextBox txtSumOfNumbersList;
+        private System.Windows.Forms.Button btnCancelTask;
     }
 }
