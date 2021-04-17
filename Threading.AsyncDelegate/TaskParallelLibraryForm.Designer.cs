@@ -63,6 +63,7 @@
             this.btnStopTask.TabIndex = 5;
             this.btnStopTask.Text = "Stop Task";
             this.btnStopTask.UseVisualStyleBackColor = true;
+            this.btnStopTask.Click += new System.EventHandler(this.btnStopTask_Click);
             // 
             // btnResuturnTask
             // 
