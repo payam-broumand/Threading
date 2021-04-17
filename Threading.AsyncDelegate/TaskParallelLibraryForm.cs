@@ -66,6 +66,7 @@ namespace Threading.AsyncDelegate
         {
             var numbers = Enumerable.Repeat(20, 120000000);
             int sum = 0;
+            ParallelOptions options = new ParallelOptions();
             Parallel.ForEach(numbers, number =>
             {
                 sum += number;
@@ -88,6 +89,19 @@ namespace Threading.AsyncDelegate
             source.Cancel();
             btnStopTask.Enabled = false;
             btnStartTask.Enabled = true;
+        }
+
+        private void btnCancelTask_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPLinq_Click(object sender, EventArgs e)
+        {
+            var numbers = Enumerable.Range(20, 10000).ToList();
+            //var result = (from n in numbers.AsParallel() where n > 20 select n).ToList();
+            //var average = numbers.AsParallel().Average();
+            var result = (from n in numbers.AsParallel().WithCancellation(source.Token) where n > 2000 select n);
         }
     }
 }

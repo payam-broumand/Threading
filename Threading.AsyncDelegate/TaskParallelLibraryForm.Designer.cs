@@ -34,6 +34,7 @@
             this.btnResuturnTask = new System.Windows.Forms.Button();
             this.txtSumOfNumbersList = new System.Windows.Forms.TextBox();
             this.btnCancelTask = new System.Windows.Forms.Button();
+            this.btnPLinq = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtTaskNumbers
@@ -92,6 +93,17 @@
             this.btnCancelTask.TabIndex = 5;
             this.btnCancelTask.Text = "Stop Task";
             this.btnCancelTask.UseVisualStyleBackColor = true;
+            this.btnCancelTask.Click += new System.EventHandler(this.btnCancelTask_Click);
+            // 
+            // btnPLinq
+            // 
+            this.btnPLinq.Location = new System.Drawing.Point(240, 12);
+            this.btnPLinq.Name = "btnPLinq";
+            this.btnPLinq.Size = new System.Drawing.Size(108, 30);
+            this.btnPLinq.TabIndex = 5;
+            this.btnPLinq.Text = "PLinQ";
+            this.btnPLinq.UseVisualStyleBackColor = true;
+            this.btnPLinq.Click += new System.EventHandler(this.btnPLinq_Click);
             // 
             // TaskParallelLibraryForm
             // 
@@ -101,6 +113,7 @@
             this.Controls.Add(this.txtSumOfNumbersList);
             this.Controls.Add(this.txtTaskNumbers);
             this.Controls.Add(this.btnCancelTask);
+            this.Controls.Add(this.btnPLinq);
             this.Controls.Add(this.btnStopTask);
             this.Controls.Add(this.btnResuturnTask);
             this.Controls.Add(this.btnStartTask);
@@ -120,5 +133,6 @@
         private System.Windows.Forms.Button btnResuturnTask;
         private System.Windows.Forms.TextBox txtSumOfNumbersList;
         private System.Windows.Forms.Button btnCancelTask;
+        private System.Windows.Forms.Button btnPLinq;
     }
 }
