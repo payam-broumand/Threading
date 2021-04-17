@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -8,6 +10,7 @@ namespace Threading.AsyncDelegate
     {
         AutoResetEvent resetEvent = new AutoResetEvent(false);
         private bool abortSecondThread;
+        private object threadLock = new object();
         public ConcurencyThreadForm()
         {
             InitializeComponent();
@@ -54,6 +57,59 @@ namespace Threading.AsyncDelegate
         {
             textBox.Text += $"Process {processId} is done.{Environment.NewLine}";
         }
+
+        private void btnStartMultiThread_Click(object sender, EventArgs e)
+        {
+            Thread[] threads = new Thread[10];
+            Printer printer = new Printer();
+            printer.Form = this;
+            for (int i = 0; i < threads.Length; i++)
+            {
+                threads[i] = new Thread(printer.PrintNumbers);
+                threads[i].Name = $"Thread {i + 1}";
+                threads[i].Start();
+            }
+        }
+
+        private void PrintNumbers()
+        {
+            // using lock to locking current thread while task is done
+            //lock (threadLock)
+            //{
+            //    string threadName = Thread.CurrentThread.Name;
+            //    Invoke(new Action(() => txtPrintNumbers.Text += $"{threadName} started ...{Environment.NewLine}"));
+            //    var numbers = new int[10];
+            //    for (int i = 0; i < numbers.Length; i++)
+            //    {
+            //        Invoke(new Action(() => txtPrintNumbers.Text += $"Operation {i + 1} Passed.{Environment.NewLine}"));
+            //        Thread.Sleep(500);
+            //    }
+            //}
+
+            // using monitor to locking current thread while thread task is done
+            Monitor.Enter(threadLock);
+            try
+            {
+                string threadName = Thread.CurrentThread.Name;
+                Invoke(new Action(() => txtPrintNumbers.Text += $"{threadName} started ...{Environment.NewLine}"));
+                var numbers = new int[10];
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    Invoke(new Action(() => txtPrintNumbers.Text += $"Operation {i + 1} Passed.{Environment.NewLine}"));
+                    Thread.Sleep(200);
+                }
+
+            }
+            finally
+            {
+                Monitor.Exit(threadLock);
+            }
+        }
+
+        public void UpdateTextBoxPrintNumbers(string text)
+        {
+            Invoke(new Action(() => txtPrintNumbers.Text += text)); 
+        }
     }
 
     public class Boundery
@@ -65,6 +121,24 @@ namespace Threading.AsyncDelegate
         {
             this.From = from;
             this.To = to;
+        }
+    }
+
+    [Synchronization]
+    public class Printer : ContextBoundObject
+    {
+        public ConcurencyThreadForm Form;
+        
+        public void PrintNumbers()
+        {
+            string threadName = Thread.CurrentThread.Name;
+            Form.UpdateTextBoxPrintNumbers($"{threadName} started ...{Environment.NewLine}");
+            var numbers = new int[10];
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Form.UpdateTextBoxPrintNumbers($"Operation {i + 1} Passed.{Environment.NewLine}");
+                Thread.Sleep(200);
+            }
         }
     }
 }
