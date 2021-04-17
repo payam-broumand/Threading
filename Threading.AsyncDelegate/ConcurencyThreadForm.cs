@@ -109,7 +109,7 @@ namespace Threading.AsyncDelegate
         public void UpdateTextBoxPrintNumbers(string text)
         {
             Invoke(new Action(() => txtPrintNumbers.Text += text)); 
-        }
+        } 
     }
 
     public class Boundery
