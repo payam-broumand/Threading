@@ -28,19 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.listProcess = new System.Windows.Forms.ListBox();
+            this.btnStartProcess = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // listProcess
+            // 
+            this.listProcess.FormattingEnabled = true;
+            this.listProcess.Location = new System.Drawing.Point(18, 56);
+            this.listProcess.Name = "listProcess";
+            this.listProcess.Size = new System.Drawing.Size(338, 290);
+            this.listProcess.TabIndex = 0;
+            // 
+            // btnStartProcess
+            // 
+            this.btnStartProcess.Location = new System.Drawing.Point(120, 12);
+            this.btnStartProcess.Name = "btnStartProcess";
+            this.btnStartProcess.Size = new System.Drawing.Size(109, 38);
+            this.btnStartProcess.TabIndex = 1;
+            this.btnStartProcess.Text = "Start Process";
+            this.btnStartProcess.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label1.Location = new System.Drawing.Point(22, 366);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(310, 36);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Process List Completed";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AsyncForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 450);
+            this.ClientSize = new System.Drawing.Size(383, 418);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnStartProcess);
+            this.Controls.Add(this.listProcess);
             this.Name = "AsyncForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AsyncForm";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox listProcess;
+        private System.Windows.Forms.Button btnStartProcess;
+        private System.Windows.Forms.Label label1;
     }
 }
