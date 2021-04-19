@@ -30,7 +30,7 @@
         {
             this.listProcess = new System.Windows.Forms.ListBox();
             this.btnStartProcess = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listProcess
@@ -49,24 +49,25 @@
             this.btnStartProcess.TabIndex = 1;
             this.btnStartProcess.Text = "Start Process";
             this.btnStartProcess.UseVisualStyleBackColor = true;
+            this.btnStartProcess.Click += new System.EventHandler(this.btnStartProcess_Click);
             // 
-            // label1
+            // lblMessage
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label1.Location = new System.Drawing.Point(22, 366);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(310, 36);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Process List Completed";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.ForeColor = System.Drawing.Color.ForestGreen;
+            this.lblMessage.Location = new System.Drawing.Point(18, 366);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(338, 36);
+            this.lblMessage.TabIndex = 2;
+            this.lblMessage.Text = "Process List Completed";
+            this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AsyncForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(383, 418);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.btnStartProcess);
             this.Controls.Add(this.listProcess);
             this.Name = "AsyncForm";
@@ -80,6 +81,6 @@
 
         private System.Windows.Forms.ListBox listProcess;
         private System.Windows.Forms.Button btnStartProcess;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMessage;
     }
 }

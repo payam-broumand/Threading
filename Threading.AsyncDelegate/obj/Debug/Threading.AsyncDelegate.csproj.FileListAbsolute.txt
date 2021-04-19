@@ -12,3 +12,4 @@ C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.Asy
 C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.AsyncDelegate.ConcurencyThreadForm.resources
 C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.AsyncDelegate.TaskParallelLibraryForm.resources
 C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.AsyncDelegate.TimerForm.resources
+C:\Users\Payam\Desktop\Threading\Threading.AsyncDelegate\obj\Debug\Threading.AsyncDelegate.AsyncForm.resources
