@@ -71,6 +71,12 @@
     <Compile Include="ThreadForm.Designer.cs">
       <DependentUpon>ThreadForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimerForm.Designer.cs">
+      <DependentUpon>TimerForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ConcurencyThreadForm.resx">
       <DependentUpon>ConcurencyThreadForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThreadForm.resx">
       <DependentUpon>ThreadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimerForm.resx">
+      <DependentUpon>TimerForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
